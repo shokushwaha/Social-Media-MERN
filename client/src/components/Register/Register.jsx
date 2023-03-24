@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Register.css"
-import { Form, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { toast } from 'react-toastify';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -65,39 +65,48 @@ export default function Register() {
     }
     return (
         <>
-            <h2>Sociallyy</h2>
+            <div classNameName="register-container">
 
-            <form >
-
-                <AccountCircleIcon />
-                <input type="text" placeholder="Full Name" name="name" value={user.name} required onChange={HandleEvent} />
+                <h2 style={{ color: "azure" }} > Sociallyy</h2>
 
 
 
-                <SentimentVerySatisfiedIcon />
-                <input type="text" placeholder="User Name" name="username" value={user.username} required onChange={HandleEvent} />
+                <div className="login-box">
+                    <form>
+                        <div className="user-box">
+
+                            <input type="text" name="name" value={user.name} required onChange={HandleEvent} />
+                            <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} >  <AccountCircleIcon style={{ color: "azure" }} /> &nbsp;FullName</label>
+                        </div>
+                        <div className="user-box">
+                            <input type="password" name="username" value={user.username} required onChange={HandleEvent} />
+                            <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} > <SentimentVerySatisfiedIcon style={{ color: "azure" }} />&nbsp;UserName</label>
+                        </div>
+                        <div className="user-box">
+                            <input type="password" name="password" value={user.password} required onChange={HandleEvent} />
+                            <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} > <LockOpenIcon style={{ color: "azure" }} />&nbsp;Password</label>
+                        </div>
 
 
+                        <div className="user-box">
+                            <input type="email" name="email" value={user.email} required onChange={HandleEvent} />
+                            <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} > <EmailIcon style={{ color: "azure" }} />&nbsp;Email</label>
+                        </div>
 
-                <EmailIcon />
-                <input type="email" placeholder="Email or Phone Number" name="email" value={user.email} required onChange={HandleEvent} />
+                        <center>
+                            <a onClick={Register}>
+                                Register
+                                <span></span>
+                            </a></center>
+                        <center>
+                            <a onClick={Login}>
+                                Login
+                                <span></span>
+                            </a></center>
+                    </form>
+                </div>
 
-
-
-                <LockOpenIcon />
-                <input type="password" placeholder="Password" name="password" value={user.password} required onChange={HandleEvent} />
-
-
-
-                <button className="Register-Action" onClick={Register}>REGISTER</button>
-
-            </form>
-
-            <h2>or </h2>
-
-            <button className="Register-Action" onClick={Login} >LOGIN</button>
-
-
+            </div>
         </>
     )
 }

@@ -4,11 +4,12 @@ const userRouter = express.Router()
 const { Auth } = require("../middleware/auth")
 const { Upload } = require("../multer/multer")
 
-const { register, login, UserData, LoggedUser, UpdateProfilePic, GetLimitData, Follow, UnFollow, GetFollowedUser } = require("../controller/userController")
+const { register, login, logOut, UserData, LoggedUser, UpdateProfilePic, GetLimitData, Follow, UnFollow, GetFollowedUser } = require("../controller/userController")
 
 userRouter.post("/register", register);
 userRouter.post("/login", login)
 userRouter.get("/userData/:id", Auth, UserData)
+userRouter.delete("/logout/:id", Auth, logOut)
 userRouter.get("/LoggedUser", Auth, LoggedUser)
 userRouter.put("/updateProfilePic", Auth, Upload, UpdateProfilePic);
 userRouter.get("/GetLimitData", Auth, GetLimitData)

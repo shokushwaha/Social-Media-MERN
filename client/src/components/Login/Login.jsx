@@ -1,12 +1,10 @@
 import React from 'react'
 import "./Login.css"
-
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { toast } from 'react-toastify';
-
 import EmailIcon from '@mui/icons-material/Email';
-import LockIcon from '@mui/icons-material/Lock';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 export default function Login() {
     const Navigate = useNavigate()
 
@@ -68,19 +66,37 @@ export default function Login() {
 
     return (
         <>
-            <h2>Sociallyy</h2>
-            <p>Being Social</p>
-            <h2>Socially</h2>
-            <form>
-                <EmailIcon />
-                <input type="email" placeholder="Email or Phone Number" name="email" onChange={HandleEvent} />
-                <LockIcon />
-                <input type="password" placeholder="Password" name="password" onChange={HandleEvent} />
-                <button className="Register-Action" onClick={Login}>LOGIN</button>
-            </form>
-            <h2>or</h2>
-            <button className="Register-Action" onClick={Register} >REGISTER</button>
-            <h3>Forgot Password ?</h3>
+            <div classNameName="login-container">
+
+                <h2>Sociallyy</h2>
+                <div className="login-box">
+                    <form>  <div className="user-box">
+                        <input type="email" name="email" value={user.email} required onChange={HandleEvent} />
+                        <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} > <EmailIcon style={{ color: "azure" }} />&nbsp;Email</label>
+                    </div>
+
+
+                        <div className="user-box">
+                            <input type="password" name="password" value={user.password} required onChange={HandleEvent} />
+                            <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} > <LockOpenIcon style={{ color: "azure" }} />&nbsp;Password</label>
+                        </div>
+
+
+                        <center>
+                            <a onClick={Login}>
+                                Login
+                                <span></span>
+                            </a></center>
+
+                        <center>
+                            <a onClick={Register}>
+                                Register
+                                <span></span>
+                            </a></center>
+
+                    </form>
+                </div>
+            </div>
         </>
     )
 }

@@ -2,13 +2,15 @@ const mongoose = require("mongoose")
 
 let Connection = () => {
     try {
-
-        mongoose.connect('mongodb://localhost:27017/socially', { useUnifiedTopology: true, useNewUrlParser: true })
-        console.log("Data Base Connected Successfully")
+        mongoose.connect(process.env.MONGO_URL,
+            {
+                useUnifiedTopology: true,
+                useNewUrlParser: true
+            })
+        console.log("Database connected successfully")
 
     } catch (error) {
-        console.log("error While Connecting With Data Base", error)
-
+        console.log("Error connecting to the database", error)
     }
 
 }

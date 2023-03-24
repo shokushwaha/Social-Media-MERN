@@ -33,7 +33,7 @@ const register = async (req, res) => {
             } else {
                 const token = jwt.sign({ email: email, id: _id }, process.env.JSON_KEY)
                 res.status(201).send({ user: newUser, token: token, message: "Registered Successfully" })
-                console.log("done")
+
             }
         })
 
@@ -69,7 +69,19 @@ const login = async (req, res) => {
     }
 
 }
+const logOut = async (req, res) => {
+    try {
+        let user = await User.findOne({ _id: req.params.id })
+        res.status(201).json({
+            loggeduser: null,
+            token: null,
+            message: "Logged Out Successfully"
+        })
+    } catch (error) {
+        res.status(201).json({ message: error })
 
+    }
+}
 const UserData = async (req, res) => {
     try {
         let user = await User.findOne({ _id: req.params.id })
@@ -190,6 +202,6 @@ const GetFollowedUser = async (req, res) => {
 }
 
 module.exports = {
-    register, login, UserData, LoggedUser, UpdateProfilePic,
+    register, login, logOut, UserData, LoggedUser, UpdateProfilePic,
     GetLimitData, Follow, UnFollow, GetFollowedUser
 }
