@@ -25,7 +25,7 @@ export default function Login() {
         e.preventDefault()
 
         if (user.email && user.password) {
-            fetch("/user/login", {
+            fetch("http://localhost:5000/user/login", {
                 method: "Post",
                 headers: {
                     "Accept": "application/json",
@@ -68,7 +68,7 @@ export default function Login() {
         <>
             <div classNameName="login-container">
 
-                <h2>Sociallyy</h2>
+                <h2 style={{ color: "azure", paddingTop: "30px", textAlign: "center", paddingBottom: "10px", fontSize: "3rem" }} >Sociallyy</h2>
                 <div className="login-box">
                     <form>  <div className="user-box">
                         <input type="email" name="email" value={user.email} required onChange={HandleEvent} />

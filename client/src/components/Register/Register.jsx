@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Register.css"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { toast } from 'react-toastify';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
@@ -31,7 +31,7 @@ export default function Register() {
         event.preventDefault()
         if (user.name && user.username && user.email && user.password) {
 
-            fetch("/user/register", {
+            fetch("http://localhost:5000/user/register", {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",
@@ -63,11 +63,14 @@ export default function Register() {
     let Login = () => {
         Navigate("/login")
     }
+
+
+
     return (
         <>
             <div classNameName="register-container">
 
-                <h2 style={{ color: "azure" }} > Sociallyy</h2>
+                <h2 style={{ color: "azure", textAlign: "center", padding: "20px", paddingTop: "10px", fontSize: "3rem" }} > Sociallyy</h2>
 
 
 

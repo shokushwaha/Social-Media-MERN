@@ -7,15 +7,6 @@
 
 }
 
-.register-container>h2 {
-    margin-top: 20px;
-    font-weight: 400;
-    font-variant: small-caps;
-    color: azure;
-    font-size: 3rem;
-
-}
-
 .login-box {
     position: absolute;
     top: 50%;
@@ -62,7 +53,7 @@
 .login-box .user-box input:valid~label {
     top: -20px;
     left: 0;
-    color: #bdb8b8;
+    color: #03f40f;
     font-size: 12px;
 
 }
@@ -78,7 +69,8 @@
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
-    letter-spacing: 4px
+    letter-spacing: 4px;
+
 }
 
 .login-box a:hover {
@@ -124,10 +116,11 @@
 
     .login-box {
         width: 80vw;
-        margin: 0px auto;
+        margin: 20px auto;
     }
 
     .register-container>h2 {
-        margin-top: 0;
+        padding-top: 0;
+        font-size: 100px;
     }
 }

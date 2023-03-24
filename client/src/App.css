@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+
 body {
-    background-color: black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    font-family: 'Rajdhani', sans-serif;
+
 }
