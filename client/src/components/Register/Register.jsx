@@ -82,7 +82,7 @@ export default function Register() {
                             <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} >  <AccountCircleIcon style={{ color: "azure" }} /> &nbsp;FullName</label>
                         </div>
                         <div className="user-box">
-                            <input type="password" name="username" value={user.username} required onChange={HandleEvent} />
+                            <input type="text" name="username" value={user.username} required onChange={HandleEvent} />
                             <label style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }} > <SentimentVerySatisfiedIcon style={{ color: "azure" }} />&nbsp;UserName</label>
                         </div>
                         <div className="user-box">

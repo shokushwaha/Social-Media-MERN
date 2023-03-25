@@ -1,7 +1,19 @@
-import React from 'react'
+import LeftNavBar from "../components/Left Nav Bar/LeftNavBar"
+import Main from "../components/Main/Main"
+import RightNavBar from "../components/Right Nav Bar/RightNavBar"
 
-export default function HomePage() {
+
+let HomePage = (props) => {
     return (
-        <div>HomePage</div>
+        <>
+            <div className="homeContainer">
+
+                <LeftNavBar />
+                <Main />
+                <RightNavBar />
+            </div>
+        </>
     )
 }
+
+export default HomePage

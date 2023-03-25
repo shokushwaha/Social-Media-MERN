@@ -1,0 +1,36 @@
+.leftNav {
+    border: 2px solid red;
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    /* height: 80vh; */
+}
+
+.leftNav>h2 {
+    /* border: 2px solid red; */
+    padding: 4px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.singleIcon {
+    /* border: 2px solid red; */
+    padding: 4px;
+    margin: 10px auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    /* justify-content: center; */
+}
+
+.singleIcon>svg {
+    font-size: 2rem;
+    /* border: 2px solid red; */
+    margin-right: 10px;
+    color: gold;
+}

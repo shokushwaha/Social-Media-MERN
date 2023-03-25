@@ -15,6 +15,7 @@ import LoginPage from "./pages/LoginPage"
 import ProfilePage from "./pages/ProfilePage"
 function App() {
   const token = localStorage.getItem("token")
+
   return (
     <>
       <div>
@@ -25,12 +26,11 @@ function App() {
               token ? <HomePage /> : <LoginPage />
             } />
 
-
-            {/* <Route path="/" element={<HomePage />} /> */}
-
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile/:id" element={<ProfilePage />} />
+
+
           </Routes>
         </BrowserRouter>
       </div>
